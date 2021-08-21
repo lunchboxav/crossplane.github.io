@@ -40,11 +40,6 @@ to your hosted Crossplane cluster.
 Once you've completed these two steps, skip down to [Install Crossplane
 CLI](#install-crossplane-cli) for further setup instructions.
 
-> Note that Upbound Cloud does not yet include support for Crossplane's alpha
-> Open Application Model (OAM) functionality. You'll need to install a self
-> hosted Crossplane if you'd like to try the 'Run Applications' part of this
-> guide.
-
 <i>Want see another hosted Crossplane service listed? Please [reach out on
 Slack][Slack] and our community will highlight it here!</i>
 
@@ -122,10 +117,6 @@ helm repo update
 helm install crossplane --namespace crossplane-system crossplane-stable/crossplane
 ```
 
-> Note that OAM is an alpha feature that is disabled by default. Make sure to
-> install the Crossplane Helm chart with the `--set alpha.oam.enabled=true` flag
-> if you would like to follow the 'Run Applications'  part of the guide.
-
 </div>
 <div class="tab-pane fade" id="install-tab-helm3-latest" markdown="1">
 Use Helm 3 to install the latest pre-release version of Crossplane:
@@ -147,10 +138,6 @@ For example:
 helm install crossplane --namespace crossplane-system crossplane-master/crossplane \
   --version 0.11.0-rc.100.gbc5d311 --devel
 ```
-
-> Note that OAM is an alpha feature that is disabled by default. Make sure to
-> install the Crossplane Helm chart with the `--set alpha.oam.enabled=true` flag
-> if you would like to follow the 'Run Applications'  part of the guide.
 
 </div>
 </div>
@@ -252,7 +239,7 @@ kubectl crossplane install configuration registry.upbound.io/xp/getting-started-
 
 Wait until all packages become healthy:
 ```
-kubectl get pkg --watch
+watch kubectl get pkg
 ```
 
 ### Get AWS Account Keyfile
@@ -306,7 +293,7 @@ kubectl crossplane install configuration registry.upbound.io/xp/getting-started-
 
 Wait until all packages become healthy:
 ```
-kubectl get pkg --watch
+watch kubectl get pkg
 ```
 
 ### Get AWS Account Keyfile
@@ -360,7 +347,7 @@ kubectl crossplane install configuration registry.upbound.io/xp/getting-started-
 
 Wait until all packages become healthy:
 ```
-kubectl get pkg --watch
+watch kubectl get pkg
 ```
 
 ### Get GCP Account Keyfile
@@ -430,7 +417,7 @@ kubectl crossplane install configuration registry.upbound.io/xp/getting-started-
 
 Wait until all packages become healthy:
 ```
-kubectl get pkg --watch
+watch kubectl get pkg
 ```
 
 ### Get Azure Principal Keyfile

@@ -147,7 +147,7 @@ spec:
             dbInstanceClass: db.t2.small
             masterUsername: masteruser
             engine: postgres
-            engineVersion: "9.6"
+            engineVersion: "12"
             skipFinalSnapshotBeforeDeletion: true
             publiclyAccessible: true
           writeConnectionSecretToRef:
@@ -614,7 +614,7 @@ spec:
     version: ">=v1.0.0-0"
   dependsOn:
     - provider: crossplane/provider-aws
-      version: ">=v0.14.0"
+      version: "v0.16.0"
 ```
 
 ```console
